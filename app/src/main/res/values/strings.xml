@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Pokemon</string>
+    <string name="appTV">List</string>
+    <string name="computoTV">Cómputo móvil</string>
+    <string name="semestreTV">2021-1</string>
+
+    <!--Strings de Urls -->
+    <string name="url_pokemons">https://pokeapi.co/api/v2/</string>
+    <string name="url_characteristics">https://pokeapi.co/api/v2/</string>
+    <string name="slash">/</string>
+
+
+    <!-- Strings de errores en conexión -->
+    <string name="errorResponseTag">Pokedex</string>
+    <string name="errorMsgResponse">"onResponse: "</string>
+    <string name="errorFailureTag">Pokedex</string>
+    <string name="errorMsgFailure">"onFailure: "</string>
+
+    <string name="hashtag">"# "</string>
+
+
+</resources>
