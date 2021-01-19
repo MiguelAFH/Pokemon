@@ -1,15 +1,17 @@
 package com.example.pokemon.pokeapi;
 
-import android.content.res.Resources;
-
-import com.example.pokemon.models.PokemonCharacteristicsResponse;
+import com.example.pokemon.models.PokemonCharacteristics;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
+import retrofit2.http.Path;
+import retrofit2.http.Url;
 
 
 public interface PokeCharacteristicsService {
 
-    @GET("pokemon/1/")
-    Call<PokemonCharacteristicsResponse> getPokemonCharacteristics();
+    @GET
+    Call<PokemonCharacteristics> getPokemonCharacteristics(
+            @Url String url
+    );
 }

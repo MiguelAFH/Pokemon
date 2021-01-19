@@ -56,7 +56,8 @@ public class MainActivity extends AppCompatActivity {
 
                 Intent intent = new Intent(contexto, Characteristics.class);
                 Bundle bundle = new Bundle();
-                bundle.putString("id", Long.toString(pokemonList.get(position).getId()));
+                bundle.putString("url", pokemonList.get(position).getUrl());
+                bundle.putString("name", pokemonList.get(position).getName());
                 intent.putExtras(bundle);
                 startActivity(intent);
                 //finish();
