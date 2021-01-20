@@ -6,7 +6,6 @@
 
     <!--Strings de Urls -->
     <string name="url_pokemons">https://pokeapi.co/api/v2/</string>
-    <string name="url_characteristics">https://pokeapi.co/api/v2/</string>
     <string name="slash">/</string>
 
 
