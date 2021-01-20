@@ -1,6 +1,7 @@
 package com.example.pokemon;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -38,8 +39,9 @@ public class Characteristics extends AppCompatActivity {
     TextView tvBaseExperience;
     TextView tvHeight;
     TextView tvWeight;
-    TextView tvTypes;
     ImageView ivPokemon;
+    ImageView ivType1;
+    ImageView ivType2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +61,8 @@ public class Characteristics extends AppCompatActivity {
             tvBaseExperience = findViewById(R.id.tvBaseExperience);
             tvHeight = findViewById(R.id.tvHeight);
             tvWeight = findViewById(R.id.tvWeight);
-            tvTypes = findViewById(R.id.tvTypes);
+            ivType1 = findViewById(R.id.ivType1);
+            ivType2 = findViewById(R.id.ivType2);
 
             retrofit = new Retrofit.Builder()
                     .baseUrl(getResources().getString(R.string.url_pokemons))
@@ -112,27 +115,18 @@ public class Characteristics extends AppCompatActivity {
                         switch (typesJSON.length()){
                             case 1:
                                 String type = typesJSON.getJSONObject(0).getJSONObject("type").getString("name");
-                                tvTypes.setText(type);
+                                setOnePokeType(type, ivType1);
                                 break;
 
                             case 2:
                                 String type1 = typesJSON.getJSONObject(0).getJSONObject("type").getString("name");
                                 String type2 = typesJSON.getJSONObject(1).getJSONObject("type").getString("name");
-                                tvTypes.setText(type1 + ", " + type2);
+                                setTwoPokeTypes(type1, type2, ivType1, ivType2);
                                 break;
 
                             default:
                                 break;
                         }
-
-                        //Toast.makeText(contexto, "url: " + urlImage, Toast.LENGTH_SHORT).show();
-
-                        //Log.d("Numero tipos","NTipos: " + String.valueOf(typesJSON.length()));
-                        //Log.d("Tipos", "Tipos: " + type);
-                        //Log.d("RESPUESTA","URL de la imagen del Pokémon leída: " + spritesJSON.getJSONObject("other").getJSONObject("official-artwork").getString("front_default"));
-
-
-
 
                     } catch (JSONException e) {
 
@@ -152,6 +146,74 @@ public class Characteristics extends AppCompatActivity {
                 Log.e(getResources().getString(R.string.errorFailureTag), "Aqui " + getResources().getString(R.string.errorMsgFailure) + t.getMessage());
             }
         });
+
+    }
+
+    private void setOnePokeType(String type1, ImageView ivType1) {
+        switch(type1){
+            case "bug":
+                ivType1.setImageResource(R.drawable.bug);
+                break;
+            case "dark":
+                ivType1.setImageResource(R.drawable.dark);
+                break;
+            case "dragon":
+                ivType1.setImageResource(R.drawable.dragon);
+                break;
+            case "electric":
+                ivType1.setImageResource(R.drawable.electric);
+                break;
+            case "fairy":
+                ivType1.setImageResource(R.drawable.fairy);
+                break;
+            case "fighting":
+                ivType1.setImageResource(R.drawable.fighting);
+                break;
+            case "fire":
+                ivType1.setImageResource(R.drawable.fire);
+                break;
+            case "flying":
+                ivType1.setImageResource(R.drawable.flying);
+                break;
+            case "ghost":
+                ivType1.setImageResource(R.drawable.ghost);
+                break;
+            case "grass":
+                ivType1.setImageResource(R.drawable.grass);
+                break;
+            case "ground":
+                ivType1.setImageResource(R.drawable.ground);
+                break;
+            case "ice":
+                ivType1.setImageResource(R.drawable.ice);
+                break;
+            case "normal":
+                ivType1.setImageResource(R.drawable.normal);
+                break;
+            case "poison":
+                ivType1.setImageResource(R.drawable.poison);
+                break;
+            case "psychic":
+                ivType1.setImageResource(R.drawable.psychic);
+                break;
+            case "rock":
+                ivType1.setImageResource(R.drawable.rock);
+                break;
+            case "steel":
+                ivType1.setImageResource(R.drawable.steel);
+                break;
+            case "water":
+                ivType1.setImageResource(R.drawable.water);
+                break;
+            default:
+                break;
+        }
+    }
+
+    private void setTwoPokeTypes(String type1, String type2, ImageView ivType1, ImageView ivType2) {
+        setOnePokeType(type1, ivType1);
+        setOnePokeType(type2, ivType2);
+
 
     }
 
