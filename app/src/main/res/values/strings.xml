@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Pokemon</string>
+    <string name="app_name">Pokémon</string>
     <string name="appTV">List</string>
     <string name="computoTV">Cómputo móvil</string>
     <string name="semestreTV">2021-1</string>
