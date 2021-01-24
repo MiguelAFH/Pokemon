@@ -144,6 +144,7 @@ public class Characteristics extends AppCompatActivity {
             @Override
             public void onFailure(Call<PokemonCharacteristics> call, Throwable t) {
                 Log.e(getResources().getString(R.string.errorFailureTag), "Aqui " + getResources().getString(R.string.errorMsgFailure) + t.getMessage());
+                Toast.makeText(contexto, getResources().getString(R.string.errorNoCharacteristics), Toast.LENGTH_LONG).show();
             }
         });
 

@@ -22,4 +22,6 @@
     <string name="weight">Weight:</string>
     <string name="types">Types:</string>
 
+    <string name="errorNoInternet">"Connection couldn't be established. Please check your internet connection and relaunch the app." </string>
+    <string name="errorNoCharacteristics">Error loading the pokémon characteristics. Please check your internet connection and relaunch the app.</string>
 </resources>

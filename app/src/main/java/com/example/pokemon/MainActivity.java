@@ -94,6 +94,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<PokemonResponse> call, Throwable t) {
                 Log.e(getResources().getString(R.string.errorFailureTag), getResources().getString(R.string.errorMsgFailure) + t.getMessage());
+                Toast.makeText(contexto, getResources().getString(R.string.errorNoInternet), Toast.LENGTH_LONG).show();
             }
         });
 
